@@ -1,0 +1,31 @@
+.column-selector-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #EDEEEF;
+    margin: 40px;
+    padding: 20px;
+
+    .column-selector-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        .column-selector-container li {
+            height: 20px;
+            width: 20px;
+            background-color: #D4DAE2;
+            list-style: none;
+            padding: 0;
+            margin: 1px;
+        }
+
+        .column-selector-flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
