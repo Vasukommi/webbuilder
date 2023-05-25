@@ -1,41 +1,143 @@
+import { RxHeading } from 'react-icons/rx';
+import { BiText } from 'react-icons/bi';
+import { BsImage } from 'react-icons/bs';
+import { HiCursorClick } from 'react-icons/hi';
+import { RiVideoFill } from 'react-icons/ri';
+import { FaRegImage } from 'react-icons/fa';
 import SidebarElements from "./sidebar-elements/SidebarElements";
+import Button from '../elements/Button';
+import Container from '../elements/Container';
+import Heading from '../elements/Heading';
+import Text from '../elements/Text';
+import Image from '../elements/Image';
+import Banner from '../elements/Banner';
+
 import "./Sidebar.scss";
 
 const sidebarElementsArray = [
     {
-        id: 1,
-        label: "Heading",
-        icon: "RxHeading"
+        elementId: 1,
+        tag: 'h1',
+        label: 'Heading',
+        component: Heading,
+        content: "",
+        icon: <RxHeading />,
+        attribute: {
+            id: "",
+            href: ""
+        },
+        events: {
+            click: '',
+            focus: ''
+        },
+        style: {
+            width: "100px"
+        }
     },
     {
-        id: 2,
-        label: "Paragraph",
-        icon: "RxHeading"
+        elementId: 2,
+        tag: 'p',
+        label: 'Text',
+        component: Text,
+        content: "",
+        icon: <BiText />,
+        attribute: {
+            id: "",
+            href: ""
+        },
+        events: {
+            click: '',
+            focus: ''
+        },
+        style: {
+            width: "100px"
+        }
     },
     {
-        id: 3,
-        label: "Image",
-        icon: "RxHeading"
+        elementId: 3,
+        tag: 'img',
+        label: 'Image',
+        content: "",
+        component: Image,
+        icon: <BsImage />,
+        attribute: {
+            id: "",
+            href: ""
+        },
+        events: {
+            click: '',
+            focus: ''
+        },
+        style: {
+            width: "100px"
+        }
     },
     {
-        id: 4,
-        label: "Button",
-        icon: "RxHeading"
-
+        elementId: 4,
+        tag: 'button',
+        label: 'Button',
+        component: Button,
+        content: "",
+        icon: <HiCursorClick />,
+        attribute: {
+            id: "",
+            href: ""
+        },
+        events: {
+            click: '',
+            focus: ''
+        },
+        style: {
+            width: "100px"
+        }
     },
     {
-        id: 5,
-        label: "Video",
-        icon: "RxHeading"
+        elementId: 5,
+        label: 'Video',
+        tag: 'video',
+        content: "",
+        icon: <RiVideoFill />,
+        attribute: {
+            id: "",
+            href: ""
+        },
+        events: {
+            click: '',
+            focus: ''
+        },
+        style: {
+            width: "100px"
+        }
+    },
+    {
+        elementId: 6,
+        label: 'Banner',
+        tag: 'img',
+        content: "",
+        component: Banner,
+        icon: <FaRegImage />,
+        attribute: {
+            id: "",
+            href: ""
+        },
+        events: {
+            click: '',
+            focus: ''
+        },
+        style: {
+            width: "100px"
+        }
     }
 ]
 
 const Sidebar = () => {
     return (
         <div className="sidebar-component">
-            {sidebarElementsArray.map((eachElement) => (
-                <SidebarElements eachElement={eachElement} key={eachElement.id}/>
-            ))}
+            <div className='sidebar-element-container'>
+                {sidebarElementsArray.map((eachElement) => (
+                    <SidebarElements eachElement={eachElement} key={eachElement.elementId} />
+                ))}
+            </div>
         </div>
     )
 }
