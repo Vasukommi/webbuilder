@@ -4,13 +4,16 @@ import { BsImage } from 'react-icons/bs';
 import { HiCursorClick } from 'react-icons/hi';
 import { RiVideoFill } from 'react-icons/ri';
 import { FaRegImage } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react'
 import SidebarElements from "./sidebar-elements/SidebarElements";
 import Button from '../elements/Button';
-import Container from '../elements/Container';
+// import Container from '../elements/Container';
 import Heading from '../elements/Heading';
 import Text from '../elements/Text';
 import Image from '../elements/Image';
 import Banner from '../elements/Banner';
+import HeadingEditor from './element-editor/HeadingEditor';
 
 import "./Sidebar.scss";
 
@@ -131,13 +134,22 @@ const sidebarElementsArray = [
 ]
 
 const Sidebar = () => {
+    const [activeSidebar, setActiveSidebar] = useState("");
+    const activeSidebarValue = useSelector((state: any) => state.sidebar.activeElementEditor);
+
+    useEffect(() => {
+        setActiveSidebar(activeSidebarValue)
+    },[activeSidebarValue]);
+
     return (
         <div className="sidebar-component">
-            <div className='sidebar-element-container'>
-                {sidebarElementsArray.map((eachElement) => (
-                    <SidebarElements eachElement={eachElement} key={eachElement.elementId} />
-                ))}
-            </div>
+            {activeSidebar === "HEADING" ? <HeadingEditor /> :
+                <div className='sidebar-element-container'>
+                    {sidebarElementsArray.map((eachElement) => (
+                        <SidebarElements eachElement={eachElement} key={eachElement.elementId} />
+                    ))}
+                </div>
+            }
         </div>
     )
 }

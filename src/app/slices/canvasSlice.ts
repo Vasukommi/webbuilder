@@ -1,24 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface canvasSlice {
-    activeElementId: string,
+interface CanvasSlice {
+    activeElementId: object;
     canvasElements: any[];
 }
 
-const initialState: canvasSlice = {
-    activeElementId: '',
+const initialState: CanvasSlice = {
+    activeElementId: {},
     canvasElements: [],
 };
 
 export const canvasSlice = createSlice({
-    name: 'canvasStor',
+    name: "canvasStore",
     initialState,
     reducers: {
-        addElement: (state, action) => {
-            state.canvasElements = [...state.canvasElements, action.payload]
+        addElement: (state, action: PayloadAction<any>) => {
+            state.canvasElements = [...state.canvasElements, action.payload];
+        },
+        setActiveElementId: (state, action) => {
+            state.activeElementId = action.payload
         }
-    }
-})
+    },
+});
 
-export const { addElement } = canvasSlice.actions
-export default canvasSlice.reducer
+export const { addElement, setActiveElementId } = canvasSlice.actions;
+export default canvasSlice.reducer;
