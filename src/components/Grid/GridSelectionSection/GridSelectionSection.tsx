@@ -1,6 +1,6 @@
-import "./ColumnSelector.scss";
+import "./GridSelectionSection.scss";
 
-const ColumnSelector = () => {
+const GridSelectionSection = () => {
     return (
         <div className="column-selector-section">
             <p>SELECT STRUCTURE OR DRAG ELEMENT HERE</p>
@@ -61,4 +61,4 @@ const ColumnSelector = () => {
     )
 }
 
-export default ColumnSelector
+export default GridSelectionSection

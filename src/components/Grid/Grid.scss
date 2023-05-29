@@ -1,0 +1,12 @@
+.grid-layout-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .grid-layout {
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+        background-color: aqua;
+    }
+}

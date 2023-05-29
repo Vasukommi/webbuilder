@@ -1,8 +1,12 @@
+import React from 'react';
 import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
-import { Provider } from 'react-redux';
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { Provider } from 'react-redux'
+
+import PageBuilder from './pages/PageBuilder';
+
 import store from './app/store';
-import CanvasPage from './pages/canvas-page/CanvasPage';
+
 import './App.scss';
 
 function App() {
@@ -10,7 +14,7 @@ function App() {
     <Provider store={store}>
       <DndProvider backend={HTML5Backend}>
         <div className="App">
-          <CanvasPage />
+          <PageBuilder />
         </div>
       </DndProvider>
     </Provider>

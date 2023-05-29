@@ -1,9 +1,9 @@
-import "./Header.scss";
+import './Header.scss';
 
 const Header = () => {
     return (
-        <div className="header-component">
-            Web Builder
+        <div className='header-section'>
+            Header
         </div>
     )
 }
